@@ -1,0 +1,174 @@
+@charset "UTF-8";
+
+html{
+    font-size: 100%;
+}
+
+body{
+    color: #121212;
+    font-size: 1rem;
+    line-height: 2;
+}
+
+/* 
+    title
+ */
+
+#title{
+    font-weight: bold;
+    font-size: 50px;
+    color: #333;
+    padding: 0 30px;
+}
+
+li {
+    list-style: none;
+}
+/* 
+    メニュー nav
+*/
+
+nav{
+    display: block;
+    position: fixed; 
+    top: 0;
+    left: -300px;
+    width: 300px;
+    height: 100%;
+    background: #fff;
+    overflow-x: hidden;
+    overflow-y: auto;
+    transition: all .5s;
+    z-index: 3;
+    opacity: 0;
+}
+
+.open nav{
+    left: 0;
+    opacity: 1;
+}
+
+nav .inner{
+    padding: 25px;
+}
+
+nav .inner ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav .inner ul li a {
+    display: block;
+    color: #333;
+    font-size: 15px;
+    padding: 25px;
+    text-decoration: none;
+    transition-duration: 0.2s;
+}
+
+nav .inner ul li a:hover{
+    background: #e4e4e4;
+}
+
+@media screen and (max-width: 767px) {
+    nav{
+        left: -220px;
+        width: 220px;
+    }    
+} 
+
+/* 
+    メニュー toggleBtn
+*/
+
+ .toggleBtn{
+    display: block;
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    width: 30px;
+    height: 30px;
+    transition: all .5s;
+    cursor: pointer;
+    z-index: 3;
+}
+
+.toggleBtn span{
+    display: block;
+    position: absolute;
+    left: 0;
+    width: 30px;
+    height: 2px;
+    background-color: #333;
+    border-radius: 4px;
+    transition: all .5s;
+}
+
+.toggleBtn span:nth-child(1) {
+    top: 4px;
+}
+
+.toggleBtn span:nth-child(2) {
+    top: 14px;
+}
+
+.toggleBtn span:nth-child(3) {
+    top: 24px;
+}
+
+.open .toggleBtn span{
+    background-color: #fff;
+}
+
+.open .toggleBtn span:nth-child(1) {
+    -webkit-transform: translateY(10deg)rotate(-315deg);
+    transform: translateY(10px) rotate(-315deg);
+}
+
+.open .toggleBtn span:nth-child(2) {
+    opacity: 0;
+}
+
+.open .toggleBtn span:nth-child(3) {
+    -webkit-transform: translateY(-10deg)rotate(315deg);
+    transform: translateY(-10px) rotate(315deg);
+} 
+
+/* 
+    mask
+*/
+
+#mask{
+    display: none;
+    transition: all .5s;
+}
+
+.open #mask{
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: .8;
+    z-index: 2;
+    cursor: pointer;
+
+} 
+
+/* 
+    横スライド　photo
+*/
+
+#photo ul li {
+    width: 300px;
+    height: 250px;
+    padding: 50px;
+    float: left;
+}
+
+#photo ul li img{
+    width: 100%;
+}
